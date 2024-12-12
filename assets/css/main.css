@@ -124,7 +124,7 @@ body {
 /* Mobile screens - small devices */
 @media screen and (max-width: 480px) {
     body {
-        background-size: cover; /* fill the viewport */
+        background-size: auto 100%; /* fill the viewport */
         background-position: 30% center;
         /* If you find cover crops too much, experiment with other values:
            e.g., background-size: 150%;
