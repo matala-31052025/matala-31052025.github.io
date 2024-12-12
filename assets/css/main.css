@@ -98,13 +98,46 @@ input, select, textarea {
 		box-sizing: inherit;
 	}
 
+	/* Background Image */
+	/* Background Image */
 	body {
-		background-image: 
-			url("images/invit_empty_cropped.jpg"), /* Replace with your image path */
-			linear-gradient(to bottom, rgba(0, 0, 0, 0), #CB8464); /* Gradient blending */
-		background-size: 90%; /* Ensures the image covers the viewport */
-		background-repeat: no-repeat; /* Prevents tiling */
-		background-position: top; /* Centers the image */
+    background-image: 
+        url("images/invit_empty_cropped.jpg"), /* Replace with your image path */
+        linear-gradient(to bottom, rgba(0, 0, 0, 0), #CB8464); /* Gradient blending */
+    background-size: 120%; /* Makes the image fit within the viewport without cropping */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center center; /* Centers the image both horizontally and vertically */
+    background-attachment: fixed; /* Keeps the background fixed during scroll */
+	}	
+	
+	/* Content Box */
+	#main {
+		position: relative; /* Allows z-index control */
+		margin-top: calc(100vh); /* Ensures content starts below the full height of the image */
+		padding: 2rem; /* Adds padding around content */
+		background-color: white; /* White content box */
+		border-radius: 8px; /* Rounded corners */
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for better visibility */
+		z-index: 10; /* Keeps it above the background */
+	}
+	
+	/* Prevent Content from Overlapping Image */
+	header#header {
+		position: relative;
+		z-index: 5;
+		color: white; /* Ensures text is visible on the image */
+		text-align: center;
+	}
+	
+	/* Adjust for Smaller Viewports */
+	@media screen and (max-width: 768px) {
+		#main {
+			margin-top: calc(100vh); /* Same adjustment for mobile */
+			padding: 1.5rem;
+		}
+		body {
+			background-size: auto 100%; /* Scales image width on smaller screens */
+		}
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
