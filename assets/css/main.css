@@ -132,6 +132,50 @@ body {
         */
     }
 }
+
+@media screen and (max-width: 736px) {
+    #nav.alt {
+        position: fixed;
+        top: 0;
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Offset to center */
+        width: 100%; /* Full width for mobile screens */
+        padding: 0.5em 1em; /* Adjust padding */
+        text-align: center; /* Center content */
+    }
+
+    #nav.alt ul {
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Center vertically */
+        align-items: center; /* Center horizontally */
+        margin: 0 auto; /* Ensure proper centering */
+    }
+
+    #nav.alt ul li {
+        margin: 0.5em 0; /* Adjust spacing between items */
+    }
+
+    #nav.alt ul li a {
+        font-size: 1em; /* Adjust font size */
+        line-height: 1.5em; /* Adjust line height */
+        padding: 0.5em 1em; /* Adjust padding for buttons */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #nav.alt {
+        width: 90%; /* Reduce width for small screens */
+        margin: 0 auto; /* Center horizontally */
+        text-align: center; /* Center text */
+        padding: 0.5em; /* Adjust padding for better fit */
+        border-radius: 8px; /* Optional: Rounded corners */
+    }
+
+    #nav.alt ul li a {
+        font-size: 0.9em; /* Smaller font size for tiny screens */
+        padding: 0.5em 1em; /* Maintain touch-friendly padding */
+    }
+}
 	
 	/* Content Box */
 	#main {
@@ -3397,11 +3441,36 @@ body {
 
 		@media screen and (max-width: 736px) {
 			#nav {
-				display: none;
+				display: block; /* Ensure it's visible */
+				position: relative; /* Relative positioning for centering */
+				width: 90%; /* Adjust width for mobile, you can tweak this */
+				margin: 0 auto; /* Center horizontally */
+				text-align: center; /* Center the text inside */
+				padding: 1em 0; /* Add some padding for better spacing */
 			}
-
-			#nav + #main {
-				padding-top: 0;
+		
+			#nav ul {
+				display: flex; /* Use flexbox for easy centering */
+				flex-direction: column; /* Stack items vertically */
+				align-items: center; /* Center items horizontally */
+				justify-content: center; /* Center items vertically */
+			}
+		
+			#nav ul li {
+				margin: 0.5em 0; /* Add spacing between items */
+			}
+		
+			#nav ul li a {
+				display: inline-block;
+				padding: 0.5em 1em; /* Adjust padding for touch-friendly buttons */
+				text-align: center; /* Ensure the text is centered */
+				border-radius: 5px; /* Optional: Rounded corners for links */
+				color: white; /* Optional: Change link text color */
+				text-decoration: none; /* Remove underline */
+			}
+		
+			#nav ul li a:hover {
+				background-color: rgba(222, 222, 222, 0.25); /* Optional: Hover effect */
 			}
 		}
 
