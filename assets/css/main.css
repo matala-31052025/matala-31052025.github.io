@@ -3249,18 +3249,22 @@ input, select, textarea {
     -webkit-transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
     -ms-transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
     transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
-    background-color: transparent; /* Make nav transparent */
+    background-color: transparent; /* nav is transparent initially */
     color: #ffffff;
     position: absolute;
     width: 64em;
     max-width: calc(100% - 4em);
     padding: 1em;
-    /* Remove or comment out any conflicting background-color lines */
     border-top-left-radius: 0.25em;
     border-top-right-radius: 0.25em;
     cursor: default;
     text-align: center;
-}
+    left: 50%;
+    transform: translateX(-50%);
+		}
+		#nav {
+			transform: translateX(-60%); /* Moves it a bit more to the left */
+		}
 
 		#nav input, #nav select, #nav textarea {
 			color: #636363;
@@ -3295,19 +3299,18 @@ input, select, textarea {
 			padding-top: 4.25em;
 		}
 
-		/* Changes start here */
+		/* Default nav: vertical layout */
 		#nav ul {
 			margin: 0;
 			padding: 0;
 			list-style: none;
-			display: flex;               /* Use Flexbox */
-			flex-direction: column;      /* Stack items vertically */
-			align-items: center;         /* Center items horizontally */
+			display: flex;
+			flex-direction: column; /* Stack items vertically by default */
+			align-items: center;
 		}
 
 		#nav ul li {
-			/* Remove inline-block and horizontal spacing */
-			margin: 0.5em 0;            /* Vertical spacing between items */
+			margin: 0.5em 0; /* Vertical spacing for default nav */
 			padding: 0;
 		}
 
@@ -3316,21 +3319,20 @@ input, select, textarea {
 			-webkit-transition: font-size 0.2s ease;
 			-ms-transition: font-size 0.2s ease;
 			transition: font-size 0.2s ease;
-			display: block;              /* Make link a block so it spans the entire width of parent */
-			text-align: center;          /* Center text within the link */
-			height: auto;                /* Auto height now that it's vertical */
-			line-height: 1.5em;          /* Adjust line-height if needed */
-			padding: 0.5em 1.25em;       /* Some padding for a nicer look */
+			display: block;
+			text-align: center;
+			height: auto;
+			line-height: 1.5em;
+			padding: 0.5em 1.25em;
 			border: 0;
 			border-radius: 8px;
-			box-shadow: none;            /* No box-shadow or transparent if desired */
-			background-color: #ad9e9e;   /* Same background color as before */
+			box-shadow: none;
+			background-color: #ad9e9e;
 		}
 
 		#nav ul li a:hover {
 			background-color: rgba(222, 222, 222, 0.25);
 		}
-		/* Changes end here */
 
 		#nav.alt {
 			position: fixed;
@@ -3341,7 +3343,25 @@ input, select, textarea {
 			z-index: 10000;
 		}
 
-		/* The line under #nav.alt */
+		/* When #nav.alt is active (scrolled), switch to horizontal layout */
+		#nav.alt ul {
+			flex-direction: row;       /* Horizontal layout */
+			justify-content: center;   /* Center horizontally */
+			align-items: center;       /* Center vertically */
+		}
+
+		#nav.alt ul li {
+			margin: 0 0.35em; /* Horizontal spacing for alt state */
+		}
+
+		#nav.alt ul li a {
+			font-size: 0.9em;
+			display: inline-block;  /* inline-block for horizontal layout */
+			line-height: 2.25em;    /* Adjust line-height for horizontal */
+			height: 2.25em;         /* Fixed height looks better horizontally */
+			padding: 0 1.25em;      /* Horizontal padding */
+		}
+
 		#nav.alt::after {
 			content: '';
 			display: block;
@@ -3352,18 +3372,7 @@ input, select, textarea {
 			background-color: #ffffff;
 		}
 
-		/* When scrolled (alt state), reduce font size slightly if desired */
-		#nav.alt ul li {
-			/* Remove or adjust if needed */
-			margin: 0.5em 0;
-		}
-
-		#nav.alt ul li a {
-			font-size: 0.9em;
-		}
-
 		@media screen and (max-width: 736px) {
-
 			#nav {
 				display: none;
 			}
@@ -3371,7 +3380,6 @@ input, select, textarea {
 			#nav + #main {
 				padding-top: 0;
 			}
-
 		}
 
 /* Main */
