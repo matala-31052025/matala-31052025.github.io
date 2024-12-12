@@ -114,7 +114,7 @@ body {
 @media screen and (max-width: 1024px) {
     body {
         background-size: cover; /* cover often works well on tablets */
-        background-position: center;
+        background-position: 40% center;
         /* If you want less zoom than 'cover', try something like:
            background-size: 100%;
            or background-size: auto 140%; */
@@ -125,7 +125,7 @@ body {
 @media screen and (max-width: 480px) {
     body {
         background-size: cover; /* fill the viewport */
-        background-position: center;
+        background-position: 30% center;
         /* If you find cover crops too much, experiment with other values:
            e.g., background-size: 150%;
            or background-size: contain; 
