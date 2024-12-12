@@ -99,11 +99,12 @@ input, select, textarea {
 	}
 
 	body {
-		background-color: #CB8464;
-		background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #535772 15%, #CB8464 85%);
-		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #535772 15%, #CB8464 85%);
-		background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #535772 15%, #CB8464 85%);
-		background-image: url("images/overlay.png"), linear-gradient(45deg, #535772 15%, #CB8464 85%);
+		background-image: 
+			url("images/invit_empty_cropped.jpg"), /* Replace with your image path */
+			linear-gradient(to bottom, rgba(0, 0, 0, 0), #CB8464); /* Gradient blending */
+		background-size: 90%; /* Ensures the image covers the viewport */
+		background-repeat: no-repeat; /* Prevents tiling */
+		background-position: top; /* Centers the image */
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -120,7 +121,7 @@ input, select, textarea {
 /* Type */
 
 	body {
-		background-color: #935d8c;
+		background-color: #593849;
 		color: rgba(255, 255, 255, 0.65);
 	}
 
