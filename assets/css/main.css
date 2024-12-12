@@ -3295,45 +3295,42 @@ input, select, textarea {
 			padding-top: 4.25em;
 		}
 
+		/* Changes start here */
 		#nav ul {
 			margin: 0;
 			padding: 0;
 			list-style: none;
+			display: flex;               /* Use Flexbox */
+			flex-direction: column;      /* Stack items vertically */
+			align-items: center;         /* Center items horizontally */
 		}
 
-			#nav ul li {
-				-moz-transition: margin 0.2s ease;
-				-webkit-transition: margin 0.2s ease;
-				-ms-transition: margin 0.2s ease;
-				transition: margin 0.2s ease;
-				display: inline-block;
-				margin: 0 0.35em;
-				padding: 0;
-				vertical-align: middle;
-			}
+		#nav ul li {
+			/* Remove inline-block and horizontal spacing */
+			margin: 0.5em 0;            /* Vertical spacing between items */
+			padding: 0;
+		}
 
-				#nav ul li a {
-					-moz-transition: font-size 0.2s ease;
-					-webkit-transition: font-size 0.2s ease;
-					-ms-transition: font-size 0.2s ease;
-					transition: font-size 0.2s ease;
-					display: inline-block;
-					height: 2.25em;
-					line-height: 2.25em;
-					padding: 0 1.25em;
-					border: 0;
-					border-radius: 8px;
-					box-shadow: inset 0 0 0 1px transparent;
-				}
+		#nav ul li a {
+			-moz-transition: font-size 0.2s ease;
+			-webkit-transition: font-size 0.2s ease;
+			-ms-transition: font-size 0.2s ease;
+			transition: font-size 0.2s ease;
+			display: block;              /* Make link a block so it spans the entire width of parent */
+			text-align: center;          /* Center text within the link */
+			height: auto;                /* Auto height now that it's vertical */
+			line-height: 1.5em;          /* Adjust line-height if needed */
+			padding: 0.5em 1.25em;       /* Some padding for a nicer look */
+			border: 0;
+			border-radius: 8px;
+			box-shadow: none;            /* No box-shadow or transparent if desired */
+			background-color: #ad9e9e;   /* Same background color as before */
+		}
 
-					#nav ul li a:hover {
-						background-color: rgba(222, 222, 222, 0.25);
-					}
-
-					#nav ul li a {
-						background-color: #ad9e9e;
-						box-shadow: none;
-					}
+		#nav ul li a:hover {
+			background-color: rgba(222, 222, 222, 0.25);
+		}
+		/* Changes end here */
 
 		#nav.alt {
 			position: fixed;
@@ -3344,24 +3341,26 @@ input, select, textarea {
 			z-index: 10000;
 		}
 
-		/* HERE IS WHERE I ADDED IT */
+		/* The line under #nav.alt */
 		#nav.alt::after {
 			content: '';
 			display: block;
-			width: 80%; /* Matches the line under h2 */
+			width: 80%; 
 			height: 1px;
 			margin: 0.6em auto 1em auto;
 			border-radius: 2px;
 			background-color: #ffffff;
 		}
 
-			#nav.alt ul li {
-				margin: 0 0.175em;
-			}
+		/* When scrolled (alt state), reduce font size slightly if desired */
+		#nav.alt ul li {
+			/* Remove or adjust if needed */
+			margin: 0.5em 0;
+		}
 
-				#nav.alt ul li a {
-					font-size: 0.9em;
-				}
+		#nav.alt ul li a {
+			font-size: 0.9em;
+		}
 
 		@media screen and (max-width: 736px) {
 
@@ -3369,9 +3368,9 @@ input, select, textarea {
 				display: none;
 			}
 
-				#nav + #main {
-					padding-top: 0;
-				}
+			#nav + #main {
+				padding-top: 0;
+			}
 
 		}
 
