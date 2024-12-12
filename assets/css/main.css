@@ -3339,10 +3339,20 @@ input, select, textarea {
 			position: fixed;
 			top: 0;
 			padding: 0.5em 1em;
-			background-color: rgba(247, 247, 247, 0.95);
 			border-top-left-radius: 0;
 			border-top-right-radius: 0;
 			z-index: 10000;
+		}
+
+		/* HERE IS WHERE I ADDED IT */
+		#nav.alt::after {
+			content: '';
+			display: block;
+			width: 80%; /* Matches the line under h2 */
+			height: 2px;
+			margin: 0.7em auto 1em auto;
+			border-radius: 2px;
+			background-color: #ffffff;
 		}
 
 			#nav.alt ul li {
