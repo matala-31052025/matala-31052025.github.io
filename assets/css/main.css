@@ -110,6 +110,20 @@ body {
     background-attachment: fixed;
 }
 
+/* Background Wrapper */
+.background {
+    position: fixed; /* Ensures the background stays fixed while scrolling */
+    top: 0; /* Aligns it with the top of the viewport */
+    left: 0; /* Aligns it with the left of the viewport */
+    width: 100%; /* Makes it span the full width */
+    height: 100%; /* Makes it span the full height */
+    z-index: -1; /* Puts it behind all other content */
+    background-image: url('images/invit_empty_cropped.jpg'); /* Replace with your image path */
+    background-size: cover; /* Makes the image cover the whole area */
+    background-position: 30% center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
 /* Tablet screens - medium-sized devices */
 @media screen and (max-width: 1024px) {
     body {
