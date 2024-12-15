@@ -20,10 +20,14 @@
 			<div id="wrapper">
 
 				<!-- Header -->
-					<header id="header" class="alt">
-						<h1>παρτάρουμε</h1>
-						<p>info for our beach wedding party on 31/05 in Matala</p>
-					</header>
+				<header id="header" class="alt">
+					<h1 class="expandable" onclick="toggleTitleExplanation()">παρτάρουμε</h1>
+					<div id="title-explanation" style="display: none; margin-top: 10px; font-size: 0.9em; color: #fff;">
+						is a colloquial verb stemming from the word “party” adapted into Greek. It’s commonly used among friends to describe going out, having a good time, celebrating and dancing.
+					</div>
+					<p></p>
+					<p>info for our beach wedding party on 31/05 in Matala</p>
+				</header>
 
 				<!-- Nav -->
 				<nav id="nav">
@@ -207,7 +211,7 @@
 						Template: <a href="https://html5up.net">HTML5 UP</a>.
 					</p>
 					<!-- Update this timestamp manually each time you push changes -->
-					<p class="timestamp">Last updated: Dec 14, 2024, 19:00 PM CET. Last version: 0b4a2f1ac4f</p>
+					<p class="timestamp">Last updated: Dec 15, 2024, 22:00 PM CET. Last version: 0b4a2f1ac4f</p>
 				</footer>
 				
 			</div>
@@ -226,7 +230,17 @@
 					document.body.classList.add("is-loaded");
 				  }, 1500); // Delay in milliseconds (500ms = 0.5 seconds)
 				});
-			  </script>
+			</script>
+			<script>
+				function toggleTitleExplanation() {
+					const explanation = document.getElementById('title-explanation');
+					if (explanation.style.display === 'none' || explanation.style.display === '') {
+						explanation.style.display = 'block';
+					} else {
+						explanation.style.display = 'none';
+					}
+				}
+			</script>
 
 	</body>
 </html>

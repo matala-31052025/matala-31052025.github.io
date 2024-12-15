@@ -3491,6 +3491,37 @@ body {
 	#nav.alt {
 		height: 0em; /* same height regardless of state */
 	}
+	.expandable {
+		cursor: pointer;
+		transition: color 0.3s ease;
+	}
+	
+	.expandable:hover {
+		color: #ffcc00; /* Highlight the title on hover */
+	}
+	
+	#title-explanation {
+		line-height: 1.6;
+		max-width: 600px;
+		animation: fadeIn 0.3s ease-in-out; /* Smooth fade-in effect */
+		font-style: italic; /* Makes the text italic */
+		font-size: 0.85em; /* Adjusts font size to be slightly smaller */
+		line-height: 1.6; /* Improves readability */
+		max-width: 600px;
+		animation: fadeIn 0.3s ease-in-out; /* Smooth fade-in effect */
+		color: #fff; /* Ensure it matches your site's color scheme */
+		margin-top: 10px; /* Adds spacing between the title and the explanation */
+	}
+	
+	/* Optional: Smooth fade-in effect */
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
 
 #nav {
 	opacity: 0; /* Initially hidden */
