@@ -3501,16 +3501,21 @@ body {
 	}
 	
 	#title-explanation {
-		line-height: 1.6;
-		max-width: 600px;
-		animation: fadeIn 0.3s ease-in-out; /* Smooth fade-in effect */
+		display: none; /* Initially hidden */
+		font-size: 0.8em; /* Adjusted font size */
+		line-height: 1.6; /* Improved line spacing for readability */
+		text-align: center; /* Center the text */
+		color: #fff; /* White color for contrast */
+		margin-top: 10px; /* Space above the explanation text */
+		animation: fadeIn 0.3s ease-in-out; /* Optional: Smooth fade-in effect */
 		font-style: italic; /* Makes the text italic */
-		font-size: 0.85em; /* Adjusts font size to be slightly smaller */
-		line-height: 1.6; /* Improves readability */
-		max-width: 600px;
-		animation: fadeIn 0.3s ease-in-out; /* Smooth fade-in effect */
-		color: #fff; /* Ensure it matches your site's color scheme */
-		margin-top: 10px; /* Adds spacing between the title and the explanation */
+		max-width: 600px; /* Restrict width for better readability */
+		margin-left: auto; /* Center horizontally */
+		margin-right: auto; /* Center horizontally */
+		position: relative; /* For precise positioning */
+		top: 0; /* Adjust as needed for vertical alignment */
+		border-bottom: 1px solid #fff; /* Thin white line */
+		padding-bottom: 5px; /* Space between text and line */
 	}
 	
 	/* Optional: Smooth fade-in effect */
