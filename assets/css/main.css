@@ -3487,7 +3487,10 @@ body {
 				background-color: rgba(222, 222, 222, 0.25); /* Optional: Hover effect */
 			}
 		}
-
+	#nav,
+	#nav.alt {
+		height: 0em; /* same height regardless of state */
+	}
 /* Main */
 
 	#main {
