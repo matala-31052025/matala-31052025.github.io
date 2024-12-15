@@ -3491,6 +3491,15 @@ body {
 	#nav.alt {
 		height: 0em; /* same height regardless of state */
 	}
+
+#nav {
+	opacity: 0; /* Initially hidden */
+	transition: opacity 1s ease-in-out; /* Smooth fade-in */
+}
+
+body.is-loaded #nav {
+	opacity: 1; /* Visible after load */
+}
 /* Main */
 
 	#main {
