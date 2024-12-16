@@ -3538,11 +3538,14 @@ body.is-loaded #nav {
 }
 /* Main */
 
-	#main {
-		background-color: #cdc3c3;
-		color: #636363;
-		border-radius: 0.25em;
-	}
+#main {
+    background-color: rgba(205, 195, 195, 0.9);
+    color: #636363;
+    border-radius: 0.25em;
+    /* padding: 2em 3em; */
+    /* max-width: 70%; */
+    /* margin: 0 auto; */
+}
 
 		#main input, #main select, #main textarea {
 			color: #636363;
