@@ -138,12 +138,11 @@ body {
 /* Mobile screens - small devices */
 @media screen and (max-width: 480px) {
     body {
-        background-size: auto 100%; /* fill the viewport */
-        background-position: 80% center;
-        /* If you find cover crops too much, experiment with other values:
-           e.g., background-size: 150%;
-           or background-size: contain; 
-        */
+        /* background-size: auto 100%; 
+        background-position: 80% center; */
+		background-size: cover; /* Fills the viewport */
+        background-position: center center; /* Centers the image */
+        background-attachment: scroll; /* Avoid issues with fixed backgrounds */
     }
 }
 
