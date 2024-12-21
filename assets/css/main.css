@@ -86,6 +86,8 @@ input, select, textarea {
 
 		html, body {
 			min-width: 320px;
+			overflow-x: hidden; /* Prevents unintended horizontal scroll */
+    		-webkit-overflow-scrolling: touch; /* Ensures smooth scrolling on iOS */
 		}
 
 	}
@@ -100,14 +102,22 @@ input, select, textarea {
 
 	
 	/* Desktop/Large screens (default) */
-body {
+/* body {
     background-image:
         url("images/invit_empty_cropped.jpg"),
         linear-gradient(to bottom, rgba(0, 0, 0, 0), #CB8464);
-    background-size: 120%; /* Adjust as needed for larger screens */
+    background-size: 120%; 
     background-repeat: no-repeat;
     background-position: 80% center;
     background-attachment: fixed;
+} */
+body {
+    background-image: url("images/invit_empty_cropped.jpg"), linear-gradient(to bottom, rgba(0, 0, 0, 0), #CB8464);
+    background-size: cover; /* Ensures the image covers the viewport */
+    background-repeat: no-repeat;
+    background-position: center center; /* Centers the image */
+    background-attachment: scroll; /* Prevents background zoom issues on mobile */
+    overflow-x: hidden; /* Prevent horizontal scrollbars */
 }
 
 /* Background Wrapper */
@@ -3422,16 +3432,28 @@ body {
 			border-top-right-radius: 0;
 			z-index: 10000;
 		} */
+		/* #nav.alt {
+			position: fixed;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: calc(100% - 4em); 
+			max-width: 64em; 
+			text-align: center;
+			padding: 0.5em 1em;
+			z-index: 10000;
+		} */
 		#nav.alt {
 			position: fixed;
 			top: 0;
 			left: 50%;
 			transform: translateX(-50%);
-			width: calc(100% - 4em); /* Matches content width */
-			max-width: 64em; /* Aligns with #main */
+			width: calc(100% - 4em);
+			max-width: 64em;
 			text-align: center;
-			padding: 0.5em 1em;
+			padding: 1em; /* Match padding with #nav */
 			z-index: 10000;
+			transition: none; /* Avoid layout changes causing jumps */
 		}
 
 		/* When #nav.alt is active (scrolled), switch to horizontal layout */
