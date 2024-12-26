@@ -4049,3 +4049,65 @@ body.is-loaded #nav {
 			}
 
 		}
+
+		/* Modal Styles */
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    z-index: 9999; /* Above everything else */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+}
+
+.modal-content {
+    background-color: #535772;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid #D8C2AB;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#password-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #D8C2AB;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#submit-password {
+    padding: 10px 20px;
+    font-size: 15px;
+    background-color: #593849;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#submit-password:hover {
+    background-color: #593849;
+}
+
+button {
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    height: 40px; /* Adjust this as needed */
+    padding: 0; /* Ensure no extra padding */
+    margin: 0; /* Remove any default margins */
+    font-size: 16px; /* Adjust as per your design */
+    line-height: normal; /* Ensure line-height doesn't push the text */
+    text-align: center;
+    border: none; /* Optional, for consistent styling */
+    cursor: pointer;
+}
