@@ -15,11 +15,13 @@
 	</head>
 	<body class="is-preload">
 		<script>
-			var passwords = ["anna","alexander","alex","alexi","alexis","kremeti","tabler"]; 
+			var passwords = ["anna","alexander","alex","alexi","alexis","kremeti","tabler",
+							"άννα","αννα","άλεξ","αλέξανδρος","αλεξανδρος","αλέξης","αλεξης",
+							"κρεμέτη","ταμπλερ","κρεμετη","ταμπλερ"]; 
 			var enteredPassword;
 
 			while (true) {
-				enteredPassword = prompt("Password? Hint: it's the name of either of us, all lowercase.");
+				enteredPassword = prompt("To continue type one of our names in lowercase:");
 				if (passwords.includes(enteredPassword)) {
 					break; 
 				} else {
