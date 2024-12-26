@@ -14,40 +14,18 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
-		<div id="password-modal" class="modal">
-			<div class="modal-content">
-				<p>Enter either of our names in lowercase to continue:</p>
-				<input type="password" id="password-input" placeholder="Password" />
-				<button id="submit-password">Submit</button>
-			</div>
-		</div>
 		<script>
-			const passwords = ["anna", "alexander", "alex", "alexi", "alexis", "kremeti", "tabler"];
-			
-			const modal = document.getElementById("password-modal");
-			const passwordInput = document.getElementById("password-input");
-			const submitButton = document.getElementById("submit-password");
-		
-			function validatePassword() {
-				const enteredPassword = passwordInput.value.toLowerCase();
+			var passwords = ["anna","alexander","alex","alexi","alexis","kremeti","tabler"]; 
+			var enteredPassword;
+
+			while (true) {
+				enteredPassword = prompt("Password? Hint: it's the name of either of us, all lowercase.");
 				if (passwords.includes(enteredPassword)) {
-					modal.style.display = "none"; 
-					document.body.classList.remove("is-preload"); 
+					break; 
 				} else {
-					alert("Invalid password. Please try again!");
+					alert("Don't you know our names? Try again!");
 				}
 			}
-		
-			submitButton.addEventListener("click", validatePassword);
-		
-			passwordInput.addEventListener("keypress", function (e) {
-				if (e.key === "Enter") {
-					validatePassword();
-				}
-			});
-			window.onload = function () {
-				modal.style.display = "block";
-			};
 		</script>
 		<!-- Background Wrapper -->
 		<div class="background"></div>
