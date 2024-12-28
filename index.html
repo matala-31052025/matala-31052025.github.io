@@ -15,18 +15,24 @@
 	</head>
 	<body class="is-preload">
 		<script>
-			var passwords = ["anna","άννα","αννα","αννούλα","αννουλα","annoula",
-							"kremeti","κρεμέτη","κρεμετη",
-							"alexander","alex","alexi","alexis","alexinaki","alexandrineli",
-							"άλεξ","αλέξανδρος","αλεξανδρος","αλέξης","αλεξης","αλεξινάκι","αλεξινακι","αλεξανδρινέλι","αλεξανδρινελι",
-							"tabler","ταμπλερ","ταμπλερ",
-							]; 
-			var enteredPassword;
+			function normalizeInput(input) {
+				const greekAccents = {
+					'ά': 'α', 'έ': 'ε', 'ή': 'η', 'ί': 'ι', 'ό': 'ο', 'ύ': 'υ', 'ώ': 'ω',
+					'Ά': 'α', 'Έ': 'ε', 'Ή': 'η', 'Ί': 'ι', 'Ό': 'ο', 'Ύ': 'υ', 'Ώ': 'ω'
+				};
+				return input.toLowerCase().replace(/[άέήίόύώΆΈΉΊΌΎΏ]/g, match => greekAccents[match]);
+			}
+
+			const passwordPatterns = [
+				/ann/, /alex/, /kremeti/, /tabler/, /αλεξ/, /ανν/, /κρεμετ/, /ταμπλερ/
+			];
+			let enteredPassword;
 
 			while (true) {
-				enteredPassword = prompt("To continue, type one of our names in lowercase:");
-				if (passwords.includes(enteredPassword)) {
-					break; 
+				enteredPassword = prompt("To continue, type any one of our names:");
+				enteredPassword = normalizeInput(enteredPassword);
+				if (passwordPatterns.some(pattern => pattern.test(enteredPassword))) {
+					break;
 				} else {
 					alert("Don't you know our names? Try again!");
 				}
