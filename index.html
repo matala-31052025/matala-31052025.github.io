@@ -24,12 +24,16 @@
 			}
 
 			const passwordPatterns = [
-				/ann/, /alex/, /kremet/, /tabler/, /αλεξ/, /ανν/, /κρεμετ/, /ταμπλερ/
+				/ann/, /alex/, /kremet/, /tabler/, /ανν/, /αλεξ/, /κρεμετ/, /ταμπλερ/
 			];
 			let enteredPassword;
 
 			while (true) {
 				enteredPassword = prompt("To continue, type any one of our names:");
+				if (enteredPassword === null) {
+					alert("You must enter a password to continue.");
+					continue;
+				}
 				enteredPassword = normalizeInput(enteredPassword);
 				if (passwordPatterns.some(pattern => pattern.test(enteredPassword))) {
 					break;
